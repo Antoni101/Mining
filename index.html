@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Simple Rpg</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
+</head>
+
+<body onload="load()">
+
+  
+  <div id="menu">
+    <button id="newGame" onclick="newGame()">New Game</button>
+    <button id="continue" onclick="conGame()">Load Game</button>
+    <button id="saveGame" onclick="saveGame()">Save Game</button>
+    <button id="optGame" onclick="optGame()">Options</button>
+
+    <h1 onclick="menudoX()" id="x">X</h1>
+  </div>
+
+  <div id="stats">
+    <h1 id="moneyTxt">Money: </h1>
+    <h1 id="dmgTxt">Damage: </h1>
+    <h1 id="speedTxt">Speed: </h1>
+
+    <h1 onclick="exitStats()" class="x">X</h1>
+  </div>
+
+  <div id="game">
+    <h2 onclick="showMenu()" id="menuButton">☰</h2>
+    <h2 onclick="showStats()" id="statsButton">📊</h2>
+    <div id="player"></div>
+  </div>
+
+</body>
+
+</html>

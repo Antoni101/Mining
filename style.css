@@ -39,11 +39,11 @@ html, body {
 }
 
 #menuButton {
-  font-size: 70px;
+  font-size: 80px;
   transition: 0.1s;
   cursor: pointer;
   position: absolute;
-  top: -2%;
+  top: -5%;
   left: 2%;
 }
 
@@ -56,7 +56,7 @@ html, body {
   font-size: 65px;
   cursor: pointer;
   position: absolute;
-  top: 8%;
+  top: 10%;
   left: 1.5%;
   transition: 0.1s;
 }
@@ -98,3 +98,4 @@ html, body {
   font-size: 65px;
   font-family: "Lucida Console", "Courier New", monospace;
 }
+

@@ -1,12 +1,14 @@
 
 var player = {
+  icon: null,
   money: 0,
   dmg: 10,
   skill: null,
-  speed: 0
+  speed: 0,
+  x: 40,
+  y: 40
 };
 
-var Player; var x = 40; var go; var attacking = false;
 var MenuX = false;
 var X;
 
@@ -26,14 +28,13 @@ function load() {
   moneyTxt = document.getElementById("moneyTxt");
   speedTxt = document.getElementById("speedTxt");
   dmgTxt = document.getElementById("dmgTxt");
-  Player = document.getElementById("player");
+  player.icon = document.getElementById("player");
   X = document.getElementById("x");
   showMenu()
 }
 
 function newGame() {
   document.body.style.backgroundColor = "BurlyWood";
-  if (attacking == true) {clearInterval(playerAttacking); attacking = false;}
   player.money = 0;
   player.dmg = 10;
   player.speed = 500;
@@ -102,31 +103,11 @@ function exitStats() {
 
 function startGame() {
   game.style.display = "Inline";
-  if (attacking == false) {
-    go = false;
-    attacking = true;
-    playerAttacking = setInterval(playerAttack, player.speed)
-  }
+  refresh()
 }
 
 function menudoX() {
   menu.style.display = "None";
   document.body.style.backgroundColor = "BurlyWood";
   setTimeout(function() { document.body.style.backgroundColor = "CornSilk"; game.style.display = "Block";}, 1000);
-}
-
-function playerAttack() {
-  if (go == false) {
-    x += 1;
-    player.money += 1;
-    moneyTxt.innerHTML = "Money: $" + player.money
-    go = true;
-  }
-  else {
-    x -= 1;
-    go = false;
-  }
-
-  
-  Player.style.left = x + "%";
 }

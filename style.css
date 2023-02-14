@@ -6,36 +6,36 @@ html, body {
 }
 
 #newGame {
+  display: grid;  
   font-size: 65px;
-  position: absolute;
-  top: 25%;
-  left: 37%;
+  margin: auto;   
+  margin-top: 90px;
   width: 500px;
-  height: 100px;
+  height: 90px;
 }
 #continue {
+  display: grid;  
   font-size: 65px;
-  position: absolute;
-  top: 40%;
-  left: 37%;
+  margin: auto;  
+  margin-top: 50px;
   width: 500px;
-  height: 100px;
+  height: 90px;
 }
 #saveGame {
+  display: grid;  
   font-size: 65px;
-  position: absolute;
-  top: 55%;
-  left: 37%;
+  margin: auto;  
+  margin-top: 50px;
   width: 500px;
-  height: 100px;
+  height: 90px;
 }
 #optGame {
+  display: grid;  
   font-size: 65px;
-  position: absolute;
-  top: 70%;
-  left: 37%;
+  margin: auto;  
+  margin-top: 50px;
   width: 500px;
-  height: 100px;
+  height: 90px;
 }
 
 #menuButton {
@@ -74,6 +74,7 @@ html, body {
   position: absolute;
   top: 40%;
   left: 40%;
+  border-radius: 50%;
 }
 
 #game {

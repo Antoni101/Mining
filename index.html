@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Simple Rpg</title>
+  <title>Simple Game</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="script.js"></script>
   <script src="player.js"></script>
+  <script src="level.js"></script>
 </head>
 
 <body onload="load()">
@@ -22,7 +23,6 @@
   </div>
 
   <div id="stats">
-    <h1 id="moneyTxt">Money: </h1>
     <h1 id="dmgTxt">Damage: </h1>
     <h1 id="speedTxt">Speed: </h1>
 
@@ -30,9 +30,10 @@
   </div>
 
   <div id="game">
+    <h1 id="moneyTxt">Money: </h1>
     <h2 onclick="showMenu()" id="menuButton">☰</h2>
     <h2 onclick="showStats()" id="statsButton">📊</h2>
-    <div id="player"></div>
+    <div onclick="clickPlayer()" id="player"></div>
   </div>
 
 

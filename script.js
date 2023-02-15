@@ -1,14 +1,4 @@
 
-var player = {
-  icon: null,
-  money: 0,
-  dmg: 10,
-  skill: null,
-  speed: 0,
-  x: 40,
-  y: 40
-};
-
 var MenuX = false;
 var X;
 
@@ -30,6 +20,7 @@ function load() {
   dmgTxt = document.getElementById("dmgTxt");
   player.icon = document.getElementById("player");
   X = document.getElementById("x");
+  moneyTxt.innerHTML = "Money: $" + player.money;
   showMenu()
 }
 
@@ -40,7 +31,7 @@ function newGame() {
   player.speed = 500;
   skill = null;
   menu.style.display = "None";
-  setTimeout(function() { document.body.style.backgroundColor = "CornSilk"; startGame() }, 1000);
+  setTimeout(function() { document.body.style.backgroundColor = bgcolor; startGame() }, 1000);
 }
 
 function conGame() {
@@ -51,7 +42,7 @@ function conGame() {
   player.skill = localStorage.getItem("player.skill");
   console.log("Loaded Save")
   menu.style.display = "None";
-  setTimeout(function() { document.body.style.backgroundColor = "CornSilk"; startGame() }, 1000);
+  setTimeout(function() { document.body.style.backgroundColor = bgcolor; startGame() }, 1000);
 }
 
 function saveGame() {
@@ -61,19 +52,19 @@ function saveGame() {
   localStorage.setItem("player.speed", player.speed); console.log("Saved Speed")
   localStorage.setItem("player.skill", player.skill); console.log("Saved Skill")
   console.log("Saved Game")
-  setTimeout(function() { document.body.style.backgroundColor = "CornSilk"; }, 1000);
+  setTimeout(function() { document.body.style.backgroundColor = bgcolor; }, 1000);
 }
 
 function optGame() {
   document.body.style.backgroundColor = "Red";
-  setTimeout(function() { document.body.style.backgroundColor = "CornSilk"; }, 500);
+  setTimeout(function() { document.body.style.backgroundColor = bgcolor; }, 500);
 }
 
 function showMenu() {
   game.style.display = "None";
   document.body.style.backgroundColor = "BurlyWood";
   setTimeout(function() { 
-    document.body.style.backgroundColor = "CornSilk"; menu.style.display = "Block";
+    document.body.style.backgroundColor = bgcolor; menu.style.display = "Block";
     if (MenuX == false) {
       X.style.display = "None";
       MenuX = true;
@@ -88,7 +79,7 @@ function showStats() {
   game.style.display = "None";
   document.body.style.backgroundColor = "BurlyWood";
   setTimeout(function() {
-    document.body.style.backgroundColor = "CornSilk"; stats.style.display = "Block";
+    document.body.style.backgroundColor = bgcolor; stats.style.display = "Block";
     moneyTxt.innerHTML = "Money: $" + player.money
     dmgTxt.innerHTML = "Damage: " + player.dmg
     speedTxt.innerHTML = "Speed: " + player.speed + "ms"
@@ -98,16 +89,17 @@ function showStats() {
 function exitStats() {
   stats.style.display = "None";
   document.body.style.backgroundColor = "BurlyWood";
-  setTimeout(function() { document.body.style.backgroundColor = "CornSilk"; game.style.display = "Block";}, 1000);
+  setTimeout(function() { document.body.style.backgroundColor = bgcolor; game.style.display = "Block";}, 1000);
 }
 
 function startGame() {
   game.style.display = "Inline";
+  moneyTxt.innerHTML = "Money: $" + player.money;
   refresh()
 }
 
 function menudoX() {
   menu.style.display = "None";
   document.body.style.backgroundColor = "BurlyWood";
-  setTimeout(function() { document.body.style.backgroundColor = "CornSilk"; game.style.display = "Block";}, 1000);
+  setTimeout(function() { document.body.style.backgroundColor = bgcolor; game.style.display = "Block";}, 1000);
 }

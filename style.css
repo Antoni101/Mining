@@ -68,6 +68,7 @@ html, body {
 }
 
 #player {
+  cursor: pointer;
   background-color: black;
   width: 150px;
   height: 150px;
@@ -97,5 +98,22 @@ html, body {
   left: 85%;
   font-size: 65px;
   font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#moneyTxt {
+  text-transform: uppercase;
+  font-family: "Lucida Console", "Courier New", monospace;
+  text-align: center;
+}
+
+#enemy {
+  cursor: pointer;
+  background-color: red;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  border-radius: 50%;
 }
 

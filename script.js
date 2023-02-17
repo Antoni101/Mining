@@ -19,8 +19,12 @@ function load() {
   speedTxt = document.getElementById("speedTxt");
   dmgTxt = document.getElementById("dmgTxt");
   player.icon = document.getElementById("player");
+  mine = document.getElementById("mine");
+  furnace = document.getElementById("furn");
+  chest = document.getElementById("chest");
   X = document.getElementById("x");
   moneyTxt.innerHTML = "Money: $" + player.money;
+  checkLevel()
   showMenu()
 }
 

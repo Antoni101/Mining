@@ -28,6 +28,7 @@ function refresh() {
     falling = true;
     gravityOn = setInterval(gravity, 10);
   }
+  checkLevel()
 }
 
 document.addEventListener('keyup', event => {
@@ -102,34 +103,28 @@ document.addEventListener('keydown', function(e) {
 
 function moveLeft() {
   if (player.x > 0) {
-    console.log("Going Left")
     player.x -= 0.5;
   }
   else {
     if (player.level == 2 || player.level == 3) {
       player.level -= 1;
       player.x -= 0.5;
-      player.x = 89;
-      checkLevel()
+      player.x = 99;
     }
-    console.log("Hitting Border");
   }
   refresh()
 }
 
 function moveRight() {
   if (player.x < 90) {
-    console.log("Going Right")
     player.x += 0.5;
   }
   else {
     if (player.level == 1 || player.level == 2) {
       player.level += 1;
       player.x += 0.5;
-      player.x = 1;
-      checkLevel()
+      player.x = -10;
     }
-    console.log("Hitting Border");
   }
   refresh();
 }

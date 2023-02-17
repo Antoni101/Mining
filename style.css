@@ -117,3 +117,27 @@ html, body {
   border-radius: 50%;
 }
 
+.block {
+  image-rendering: pixelated;
+  width: 200;
+  height: 200px;
+  position: absolute;
+  top: 75%;
+  box-shadow: 20px 20px 50px grey;
+}
+
+#mine {
+  display: none;
+  left: 15%
+}
+
+#furn {
+  display: none;
+  left: 45%
+}
+
+#chest {
+  display: none;
+  left: 75%;
+  
+}

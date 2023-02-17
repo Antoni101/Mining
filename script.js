@@ -17,6 +17,7 @@ var loadingSpeed = 500
 var player = {
   icon: null,
   ores: 0,
+  smelted: 0,
   money: 0,
   speed: 500,
   x: 40,
@@ -31,8 +32,7 @@ function load() {
   statsBtn = document.getElementById("statsButton");
   stats = document.getElementById("stats")
   game = document.getElementById("game");
-  moneyTxt = document.getElementById("moneyTxt");
-  speedTxt = document.getElementById("speedTxt");
+  statsTxt = document.getElementById("statsTxt");
   player.icon = document.getElementById("player");
   mine = document.getElementById("mine");
   furnace = document.getElementById("furn");
@@ -52,28 +52,16 @@ function saveGame() {
   localStorage.setItem("player.speed", player.speed); console.log("Saved Speed")
 }
 
-function showStats() {
-  game.style.display = "None";
-  stats.style.display = "Block";
-  moneyTxt.innerHTML = "Money: $" + player.money
-  speedTxt.innerHTML = "Speed: " + player.speed + "ms"
-}
-
-function exitStats() {
-  stats.style.display = "None";
-  startGame()
-}
-
 function startGame() {
   game.style.display = "Inline";
-  moneyTxt.innerHTML = "Money: $" + player.money;
+  statsTxt.innerHTML = "Ores: " + player.ores + " / Smelted Ores: " + player.smelted + " / Money: $" + player.money;
   refresh()
 }
 
 //-----------------PLAYER--------------------------------
 
 function refresh() {
-  moneyTxt.innerHTML = "Money: $" + player.money;
+  statsTxt.innerHTML = "Ores: " + player.ores + " / Smelted Ores: " + player.smelted + " / Money: $" + player.money;
   player.icon.style.top = player.y + "%"
   player.icon.style.left = player.x + "%"
   if (player.y < groundBorder && falling == false && jumping == false) {
@@ -134,7 +122,7 @@ document.addEventListener('keydown', function(e) {
       setTimeout(function() {
         goingLeft = false;
         clearInterval(L);
-      }, 500);
+      }, 250);
     }
 })
 
@@ -147,7 +135,7 @@ document.addEventListener('keydown', function(e) {
       setTimeout(function() {
         goingRight = false;
         clearInterval(R);
-      }, 500);
+      }, 250);
     }
 })
 
@@ -220,7 +208,21 @@ function checkLevel() {
 }
 
 function daBlock() {
-  player.money += 1;
+  if (player.level == 1) {
+    player.ores += 1;
+  }
+  else if (player.level == 2) {
+    if (player.ores > 0) {
+      player.ores -= 1;
+      player.smelted += 1;
+    }
+  }
+  else if (player.level == 3) {
+    if (player.smelted > 0) {
+      player.smelted -= 1;
+      player.money += 1;
+    }
+  }
   refresh()
 }
 

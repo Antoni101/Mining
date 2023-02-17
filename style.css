@@ -13,21 +13,6 @@ html, body {
   height: 90px;
 }
 
-#statsButton {
-  font-size: 65px;
-  cursor: pointer;
-  position: absolute;
-  top: 1%;
-  left: 1.5%;
-  transition: 0.1s;
-}
-
-#stats {
-  font-size: 65px;
-  display: none;
-  font-family: "Lucida Console", "Courier New", monospace;
-}
-
 #player {
   cursor: pointer;
   background-color: black;
@@ -58,7 +43,7 @@ html, body {
   font-family: "Lucida Console", "Courier New", monospace;
 }
 
-#moneyTxt {
+#statsTxt {
   text-transform: uppercase;
   font-family: "Lucida Console", "Courier New", monospace;
   text-align: center;

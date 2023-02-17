@@ -6,24 +6,11 @@
   <title>Simple Game</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <script src="script.js"></script>
-  <script src="player.js"></script>
-  <script src="level.js"></script>
 </head>
 
 <body onload="load()">
 
-  
-  <div id="menu">
-    <button id="newGame" onclick="newGame()">New Game</button>
-    <button id="continue" onclick="conGame()">Load Game</button>
-    <button id="saveGame" onclick="saveGame()">Save Game</button>
-    <button id="optGame" onclick="optGame()">Options</button>
-
-    <h1 onclick="menudoX()" id="x">X</h1>
-  </div>
-
   <div id="stats">
-    <h1 id="dmgTxt">Damage: </h1>
     <h1 id="speedTxt">Speed: </h1>
 
     <h1 onclick="exitStats()" class="x">X</h1>
@@ -34,7 +21,6 @@
     <img src="images/furnace.png" id="furn" class="block">
     <img src="images/chest.png" id="chest" class="block">
     <h1 id="moneyTxt">Money: </h1>
-    <h2 onclick="showMenu()" id="menuButton">☰</h2>
     <h2 onclick="showStats()" id="statsButton">📊</h2>
     <div onclick="clickPlayer()" id="player"></div>
   </div>

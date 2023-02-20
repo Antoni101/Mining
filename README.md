@@ -1,2 +1,3 @@
 # SimpleGame
-Simple Game im working for fun in Javascript
+Simple Mining 
+Game im working for fun in Javascript
